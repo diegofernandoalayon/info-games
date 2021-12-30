@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
-
+import {getPersons} from './services/persons'
 function App() {
   const [count, setCount] = useState(0)
-
+  getPersons()
   return (
     <div className="App">
       <header className="App-header">
