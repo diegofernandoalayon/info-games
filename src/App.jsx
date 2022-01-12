@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import logo from './logo.svg'
 import './App.css'
 import {getPersons} from './services/persons'
+import Users from './components/Users'
 function App() {
   const [count, setCount] = useState([])
   useEffect(()=>{
@@ -10,16 +10,20 @@ function App() {
       .then(res => setCount(res))
   },[])
   
+  const updateScore = (id) => {
     
+  }
   // console.log(a)
   return (
     <div className="App">
-      <header className="App-header">
-        todo
-        {
-          count.map(oe => <p key={oe.id}>{oe.name}</p>)
-        }
+      <header >
+      
       </header>
+      <div className="App-header">
+        {
+          count.map(person => <Users key={person.id} person={person}/>)
+        }
+      </div>
     </div>
   )
 }
