@@ -11,7 +11,7 @@ function App() {
   },[])
   
   const updateScore = (id) => {
-    
+    //pedir la info de cada user y luego actualizar mandando esta info mas la nueva, para evitar que se sobre escriba,
   }
   // console.log(a)
   return (
