@@ -3,28 +3,33 @@ import './App.css'
 import {getPersons, updateScore} from './services/persons'
 import Users from './components/Users'
 function App() {
-  const [count, setCount] = useState([])
-  const [update, setUpdate] = useState(0)
+  const [users, setUsers] = useState([])
   useEffect(()=>{
-    
+
     getPersons()
-      .then(res => setCount(res))
+      .then(res => setUsers(res))
       
-  },[update])
+  },[])
   
   const handleUpdateScore = (id) => {
     //pedir la info de cada user y luego actualizar mandando esta info mas la nueva, para evitar que se sobre escriba,
-    const person = count.find(p => p.id === 3)
+    const person = users.find(p => p.id === 3)
     const personUpdate = {
       ...person,
       score : [...person.score,999]
     }
     console.log(personUpdate)
-    // getPerson(2)
-    //   .then(res => console.log(res))
     updateScore(3,personUpdate)
-    setUpdate(actual => actual + 1)
-    console.log(update)
+    
+
+    setUsers(actual => actual.map(person => {
+      if (person.id === 3){
+        return personUpdate
+      }
+      return person
+    }))
+    /* */
+
   }
   // console.log(a)
   return (
@@ -34,7 +39,7 @@ function App() {
       </header>
       <div className="App-header">
         {
-          count.map(person => <Users key={person.id} person={person}/>)
+          users.map(person => <Users key={person.id} person={person}/>)
         }
       </div>
     </div>
