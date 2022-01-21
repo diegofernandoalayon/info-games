@@ -20,15 +20,8 @@ function App() {
     }
     console.log(personUpdate)
     updateScore(3,personUpdate)
-    
 
-    setUsers(actual => actual.map(person => {
-      if (person.id === 3){
-        return personUpdate
-      }
-      return person
-    }))
-    /* */
+    setUsers(actual => actual.map(person => person.id === 3 ? personUpdate : person))
 
   }
   // console.log(a)
