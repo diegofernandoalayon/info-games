@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import {getPersons, updateScore} from './services/persons'
 import Users from './components/Users'
+
 function App() {
   const [users, setUsers] = useState([])
+
   useEffect(()=>{
 
     getPersons()
@@ -11,16 +13,15 @@ function App() {
       
   },[])
   
-  const handleUpdateScore = (id) => {
-    //pedir la info de cada user y luego actualizar mandando esta info mas la nueva, para evitar que se sobre escriba,
-    const person = users.find(p => p.id === 3)
+  const handleUpdateScore = (id, score) => {
+    const person = users.find(p => p.id === id)
     const personUpdate = {
       ...person,
-      score : [...person.score,999]
+      score : [...person.score,score]
     }
-    updateScore(3,personUpdate)
+    updateScore(id,personUpdate)
 
-    setUsers(actual => actual.map(person => person.id === 3 ? personUpdate : person))
+    setUsers(actual => actual.map(person => person.id === id ? personUpdate : person))
 
   }
   // console.log(a)
@@ -31,7 +32,7 @@ function App() {
       </header>
       <div className="App-header">
         {
-          users.map(person => <Users key={person.id} person={person}/>)
+          users.map(person => <Users key={person.id} person={person} update={handleUpdateScore}/>)
         }
       </div>
     </div>

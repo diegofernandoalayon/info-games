@@ -1,6 +1,6 @@
 import FormScore from "../FormScore"
 
-const Users = ({person}) => {
+const Users = ({person, update}) => {
 
   const average = (list) => {
     const avg = list.reduce((acc, ele) => acc+=ele,0)
@@ -9,7 +9,7 @@ const Users = ({person}) => {
   return(
     <div>
       <h1>{person.name}</h1>
-      <FormScore />
+      <FormScore id={person.id} update={update}/>
       <h3>{average(person.score)}</h3>
       {
 
