@@ -7,8 +7,9 @@ export const getPersons = async () => {
 }
 
 export const updateScore = async (id, data) => {
-  console.log(id,data)
-  await axios.put(`${baseUrl}/${id}`, data )
+  
+  const status = await axios.put(`${baseUrl}/${id}`, data )
+  return status
 }
 
 export const getPerson = async (id) => {
