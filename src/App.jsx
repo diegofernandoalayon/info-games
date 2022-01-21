@@ -18,7 +18,6 @@ function App() {
       ...person,
       score : [...person.score,999]
     }
-    console.log(personUpdate)
     updateScore(3,personUpdate)
 
     setUsers(actual => actual.map(person => person.id === 3 ? personUpdate : person))

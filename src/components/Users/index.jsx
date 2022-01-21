@@ -1,7 +1,7 @@
+import FormScore from "../FormScore"
 
 const Users = ({person}) => {
 
-  console.log(person.score)
   const average = (list) => {
     const avg = list.reduce((acc, ele) => acc+=ele,0)
     return (avg/list.length).toFixed(3)
@@ -9,6 +9,7 @@ const Users = ({person}) => {
   return(
     <div>
       <h1>{person.name}</h1>
+      <FormScore />
       <h3>{average(person.score)}</h3>
       {
 
