@@ -1,5 +1,5 @@
 import { useState } from "react"
-
+import './formScore.css'
 const FormScore = ({id, update}) => {
   const [score, setScore] = useState('')
 
@@ -20,8 +20,8 @@ const FormScore = ({id, update}) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input value={score} onChange={handleChange}/>
+      <form onSubmit={handleSubmit} className="form-score">
+        <input placeholder="New Score" value={score} onChange={handleChange}/>
         <button onClick={handleSubmit}>Save</button>
         {score}
       </form>

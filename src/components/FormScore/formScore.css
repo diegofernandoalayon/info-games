@@ -1,0 +1,23 @@
+.form-score{
+  display: flex;
+  flex-direction: column;
+  width:50% ;
+  margin: 0 auto;
+}
+.form-score input{
+  border: none;
+  border-radius: 10px 10px 0 0;
+  padding: 2px;
+  text-align: center;
+}
+.form-score button{
+  border: none;
+  border-radius: 0 0 40px 40px;
+  background-color: #09f;
+  cursor: pointer;
+  transition: background-color 0.5s;
+  
+}
+.form-score button:hover{
+  background-color: aqua;
+}

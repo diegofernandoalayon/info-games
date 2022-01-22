@@ -28,7 +28,7 @@ function App() {
   return (
     <div className="App">
       <header >
-      <button onClick={handleUpdateScore}>aoeu</button>
+      
       </header>
       <div className="App-header">
         {

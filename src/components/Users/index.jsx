@@ -4,7 +4,7 @@ const Users = ({person, update}) => {
 
   const average = (list) => {
     const avg = list.reduce((acc, ele) => acc+=ele,0)
-    return (avg/list.length).toFixed(3)
+    return (avg/list.length).toFixed(2)
   }
   return(
     <div>
