@@ -1,5 +1,5 @@
 import FormScore from "../FormScore"
-
+import './users.css'
 const Users = ({person, update}) => {
 
   const average = (list) => {
@@ -7,7 +7,7 @@ const Users = ({person, update}) => {
     return (avg/list.length).toFixed(2)
   }
   return(
-    <div>
+    <div className='card-user'>
       <h1>{person.name}</h1>
       <FormScore id={person.id} update={update}/>
       <h3>{average(person.score)}</h3>

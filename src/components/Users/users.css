@@ -1,0 +1,9 @@
+.card-user:nth-child(3n+1){
+  border: 1px solid var(--color1);
+}
+.card-user:nth-child(3n+2){
+  border: 1px solid var(--color2);
+}
+.card-user:nth-child(3n+3){
+  border: 1px solid var(--color3);
+}
