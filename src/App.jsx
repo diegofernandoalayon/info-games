@@ -1,25 +1,26 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import {getPersons, updateScore} from './services/persons'
+import personServices from './services/persons'
 import Users from './components/Users'
+import FormNewPerson from './components/FormNewPerson'
 
 function App() {
   const [users, setUsers] = useState([])
-
   useEffect(()=>{
 
-    getPersons()
-      .then(res => setUsers(res))
+    personServices
+      .getPersons()
+        .then(res => setUsers(res))
       
   },[])
-  
   const handleUpdateScore = (id, score) => {
     const person = users.find(p => p.id === id)
     const personUpdate = {
       ...person,
       score : [...person.score,score]
     }
-    updateScore(id,personUpdate)
+    personServices
+      .updateScore(id,personUpdate)
 
     setUsers(actual => actual.map(person => person.id === id ? personUpdate : person))
 
@@ -28,6 +29,7 @@ function App() {
   return (
     <div className="App">
       <header >
+        <FormNewPerson setUsers={setUsers}/> 
       
       </header>
       <div className="App-header">

@@ -18,7 +18,7 @@ const getPerson = async (id) => {
 }
 const createPerson = async (newPerson) => {
   const {data} = await axios.post(baseUrl,newPerson)
-  console.log(data)
+  return data
 }
 
 export default { getPersons, updateScore, getPerson, createPerson}
