@@ -16,3 +16,8 @@ export const getPerson = async (id) => {
   const {data} = await axios.get(`${baseUrl}/${id}`)
   return data
 }
+
+export const createPerson = async (newPerson) => {
+  const {data} = await axios.post(baseUrl,newPerson)
+  console.log(data)
+}
