@@ -1,31 +1,30 @@
-import { useState } from "react"
+import { useState } from 'react'
 import personServices from '../../services/persons'
 
-const FormNewPerson = ({setUsers}) => {
+const FormNewPerson = ({ setUsers }) => {
   const [name, setName] = useState('')
 
   const handleSubmit = (event) => {
     event.preventDefault()
     const newPerson = {
       name: name,
-      score: [],
+      score: []
     }
     personServices
       .createPerson(newPerson)
-      .then((data)=>{
+      .then((data) => {
         console.log('data', data)
         setUsers((actual) => {
-          return [...actual, data]})
+          return [...actual, data]
+        })
       })
-    
-    setName('')
 
-    
+    setName('')
   }
-  return(
+  return (
     <>
       <form onSubmit={handleSubmit}>
-        <input type="text" value={name} onChange={(event) => setName(event.target.value) }/>
+        <input type='text' value={name} onChange={(event) => setName(event.target.value)} />
         <button>Create</button>
       </form>
     </>

@@ -1,29 +1,28 @@
-import axios from "axios"
+import axios from 'axios'
 const baseUrl = 'http://localhost:3002/persons'
 
 const getPersons = async () => {
- const {data} = await axios.get(baseUrl)
- return data  
+  const { data } = await axios.get(baseUrl)
+  return data
 }
 
 const updateScore = async (id, data) => {
-  
-  const status = await axios.put(`${baseUrl}/${id}`, data )
+  const status = await axios.put(`${baseUrl}/${id}`, data)
   return status
 }
 
 const getPerson = async (id) => {
-  const {data} = await axios.get(`${baseUrl}/${id}`)
+  const { data } = await axios.get(`${baseUrl}/${id}`)
   return data
 }
 const createPerson = async (newPerson) => {
-  const {data} = await axios.post(baseUrl,newPerson)
+  const { data } = await axios.post(baseUrl, newPerson)
   return data
 }
 
 const deletePerson = async (id) => {
-  const {data} = await axios.delete(`${baseUrl}/${id}`)
+  const { data } = await axios.delete(`${baseUrl}/${id}`)
   return data
 }
 
-export default { getPersons, updateScore, getPerson, createPerson, deletePerson}
+export default { getPersons, updateScore, getPerson, createPerson, deletePerson }
