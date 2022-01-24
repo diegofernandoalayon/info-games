@@ -21,4 +21,9 @@ const createPerson = async (newPerson) => {
   return data
 }
 
-export default { getPersons, updateScore, getPerson, createPerson}
+const deletePerson = async (id) => {
+  const {data} = await axios.delete(`${baseUrl}/${id}`)
+  return data
+}
+
+export default { getPersons, updateScore, getPerson, createPerson, deletePerson}

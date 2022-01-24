@@ -8,7 +8,7 @@ const Users = ({person, update}) => {
   }
   return(
     <div className='card-user'>
-      <h1>{person.name}</h1>
+      <h2>{person.name}</h2>
       <FormScore id={person.id} update={update}/>
       <h3>{average(person.score)}</h3>
       {

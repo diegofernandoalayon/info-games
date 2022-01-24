@@ -29,13 +29,13 @@ function App() {
   return (
     <div className="App">
       <header >
-        <FormNewPerson setUsers={setUsers}/> 
-      
+        <h1>info-games</h1>
       </header>
       <div className="App-header">
         {
           users.map(person => <Users key={person.id} person={person} update={handleUpdateScore}/>)
         }
+        <FormNewPerson setUsers={setUsers}/> 
       </div>
     </div>
   )
