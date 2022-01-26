@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import personServices from './services/persons'
-import Users from './components/Users'
+// import Users from './components/Users'
 import FormNewPerson from './components/FormNewPerson'
 // import { Routes, Route } from 'react-router'
 import { Routes, Route, Link } from 'react-router-dom'
+import List from './components/List'
 
 function App () {
   const [users, setUsers] = useState([])
@@ -24,7 +25,6 @@ function App () {
 
     setUsers(actual => actual.map(person => person.id === id ? personUpdate : person))
   }
-  // console.log(a)
   return (
     <div className='App'>
       <header>
@@ -37,13 +37,13 @@ function App () {
       <div className='App-header'>
         <Routes>
           <Route path='/' element={<h1>home</h1>} />
-          <Route path='/users' element={<h1>mad world</h1>} />
+          <Route path='/users' element={<List users={users} handleUpdateScore={handleUpdateScore} />} />
           <Route path='/*' element={<h1>ruta no encontrada</h1>} />
         </Routes>
 
-        {
+        {/* {
           users.map(person => <Users key={person.id} person={person} update={handleUpdateScore} />)
-        }
+        } */}
         <FormNewPerson setUsers={setUsers} />
       </div>
     </div>
