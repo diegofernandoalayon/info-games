@@ -6,7 +6,7 @@ import personServices from './services/persons'
 // import { Routes, Route } from 'react-router'
 import { Routes, Route, Link } from 'react-router-dom'
 // import List from './components/List'
-import Sprint from './pages/Sprint'
+import SprintPage from './pages/SprintPage'
 import UsersPage from './pages/UsersPage'
 
 function App () {
@@ -41,7 +41,7 @@ function App () {
         <Routes>
           <Route path='/' element={<h1>home</h1>} />
           <Route path='/users' element={<UsersPage users={users} handleUpdateScore={handleUpdateScore} setUsers={setUsers} />} />
-          <Route path='/sprint' element={<Sprint />} />
+          <Route path='/sprint' element={<SprintPage />} />
           <Route path='/*' element={<h1>ruta no encontrada</h1>} />
         </Routes>
 

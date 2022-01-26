@@ -1,8 +1,6 @@
 import User from '../User/index'
 import FormNewPerson from '../FormNewPerson/index'
 const List = ({ users, handleUpdateScore, createNewPerson }) => {
-  console.log('users', users)
-
   return (
     <>
 

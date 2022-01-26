@@ -3,7 +3,6 @@ import personServices from '../../services/persons'
 
 const UsersPage = ({ users, handleUpdateScore, setUsers }) => {
   const createNewPerson = (name) => {
-    console.log(name)
     const newPerson = {
       name: name,
       score: []
@@ -20,7 +19,11 @@ const UsersPage = ({ users, handleUpdateScore, setUsers }) => {
   return (
     <>
       <h2>users</h2>
-      <List users={users} handleUpdateScore={handleUpdateScore} createNewPerson={createNewPerson} />
+      <List
+        users={users}
+        handleUpdateScore={handleUpdateScore}
+        createNewPerson={createNewPerson}
+      />
     </>
   )
 }
