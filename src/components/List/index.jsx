@@ -1,6 +1,6 @@
 import User from '../User/index'
 import FormNewPerson from '../FormNewPerson/index'
-const List = ({ users, handleUpdateScore, setUsers }) => {
+const List = ({ users, handleUpdateScore, createNewPerson }) => {
   console.log('users', users)
 
   return (
@@ -9,7 +9,7 @@ const List = ({ users, handleUpdateScore, setUsers }) => {
       {
         users.map(person => <User key={person.id} person={person} update={handleUpdateScore} />)
       }
-      <FormNewPerson setUsers={setUsers} />
+      <FormNewPerson createNewPerson={createNewPerson} />
     </>
   )
 }

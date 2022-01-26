@@ -1,24 +1,12 @@
 import { useState } from 'react'
-import personServices from '../../services/persons'
+// import personServices from '../../services/persons'
 
-const FormNewPerson = ({ setUsers }) => {
+const FormNewPerson = ({ createNewPerson }) => {
   const [name, setName] = useState('')
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    const newPerson = {
-      name: name,
-      score: []
-    }
-    personServices
-      .createPerson(newPerson)
-      .then((data) => {
-        console.log('data', data)
-        setUsers((actual) => {
-          return [...actual, data]
-        })
-      })
-
+    createNewPerson(name)
     setName('')
   }
   return (
