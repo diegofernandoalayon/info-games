@@ -13,20 +13,30 @@
       "id": 2,
       "name": "yo",
       "score": [
-        0.59,
-        1,
-        3,
-        3,
-        3,
-        3,
-        3,
-        3
+        0.59
       ]
     },
     {
       "name": "otro",
       "score": [],
       "id": 3
+    },
+    {
+      "name": "la otra",
+      "score": [],
+      "id": 4
+    },
+    {
+      "name": "la quesona en 4tro",
+      "score": [
+        1234
+      ],
+      "id": 5
+    },
+    {
+      "name": "muy largo como el tamaño de todo lo grande ",
+      "score": [],
+      "id": 6
     }
   ]
 }
