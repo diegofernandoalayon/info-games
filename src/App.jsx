@@ -3,7 +3,8 @@ import './App.css'
 import personServices from './services/persons'
 import Users from './components/Users'
 import FormNewPerson from './components/FormNewPerson'
-import { Routes, Route } from 'react-router'
+// import { Routes, Route } from 'react-router'
+import { Routes, Route, Link } from 'react-router-dom'
 
 function App () {
   const [users, setUsers] = useState([])
@@ -28,6 +29,10 @@ function App () {
     <div className='App'>
       <header>
         <h1>info-games</h1>
+        <nav>
+          <Link to='/'>Home</Link>
+          <Link to='/users'>Users</Link>
+        </nav>
       </header>
       <div className='App-header'>
         <Routes>
