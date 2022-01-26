@@ -24,7 +24,7 @@ const FormNewPerson = ({ setUsers }) => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input type='text' value={name} onChange={(event) => setName(event.target.value)} />
+        <input placeholder='Name new User' type='text' value={name} onChange={(event) => setName(event.target.value)} />
         <button>Create</button>
       </form>
     </>

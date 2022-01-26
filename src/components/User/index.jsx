@@ -1,6 +1,6 @@
 import FormScore from '../FormScore'
 import './users.css'
-const Users = ({ person, update }) => {
+const User = ({ person, update }) => {
   const average = (list) => {
     const avg = list.reduce((acc, ele) => (acc += ele), 0)
     return (avg / list.length).toFixed(2)
@@ -18,4 +18,4 @@ const Users = ({ person, update }) => {
   )
 }
 
-export default Users
+export default User

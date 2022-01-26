@@ -1,10 +1,13 @@
-import Users from '../Users/index'
+import User from '../User/index'
 import FormNewPerson from '../FormNewPerson/index'
 const List = ({ users, handleUpdateScore, setUsers }) => {
+  console.log('users', users)
+
   return (
     <>
+
       {
-         users.map(person => <Users key={person.id} person={person} update={handleUpdateScore} />)
+        users.map(person => <User key={person.id} person={person} update={handleUpdateScore} />)
       }
       <FormNewPerson setUsers={setUsers} />
     </>

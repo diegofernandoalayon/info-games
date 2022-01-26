@@ -5,7 +5,9 @@ import personServices from './services/persons'
 // import FormNewPerson from './components/FormNewPerson'
 // import { Routes, Route } from 'react-router'
 import { Routes, Route, Link } from 'react-router-dom'
-import List from './components/List'
+// import List from './components/List'
+import Sprint from './pages/Sprint'
+import UsersPage from './pages/UsersPage'
 
 function App () {
   const [users, setUsers] = useState([])
@@ -32,12 +34,14 @@ function App () {
         <nav>
           <Link to='/'>Home</Link>
           <Link to='/users'>Users</Link>
+          <Link to='/sprint'>Sprint</Link>
         </nav>
       </header>
       <div className='App-header'>
         <Routes>
           <Route path='/' element={<h1>home</h1>} />
-          <Route path='/users' element={<List users={users} handleUpdateScore={handleUpdateScore} setUsers={setUsers} />} />
+          <Route path='/users' element={<UsersPage users={users} handleUpdateScore={handleUpdateScore} setUsers={setUsers} />} />
+          <Route path='/sprint' element={<Sprint />} />
           <Route path='/*' element={<h1>ruta no encontrada</h1>} />
         </Routes>
 
