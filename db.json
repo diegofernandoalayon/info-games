@@ -15,6 +15,16 @@
       "score": [
         0.59
       ]
+    },
+    {
+      "name": "alguien",
+      "score": [],
+      "id": 3
+    },
+    {
+      "name": "otro alguien",
+      "score": [],
+      "id": 4
     }
   ]
 }
