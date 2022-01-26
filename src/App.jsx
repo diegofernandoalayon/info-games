@@ -3,6 +3,7 @@ import './App.css'
 import personServices from './services/persons'
 import Users from './components/Users'
 import FormNewPerson from './components/FormNewPerson'
+import { Routes, Route } from 'react-router'
 
 function App () {
   const [users, setUsers] = useState([])
@@ -29,6 +30,12 @@ function App () {
         <h1>info-games</h1>
       </header>
       <div className='App-header'>
+        <Routes>
+          <Route path='/' element={<h1>home</h1>} />
+          <Route path='/users' element={<h1>mad world</h1>} />
+          <Route path='/*' element={<h1>ruta no encontrada</h1>} />
+        </Routes>
+
         {
           users.map(person => <Users key={person.id} person={person} update={handleUpdateScore} />)
         }
