@@ -29,7 +29,7 @@ function App () {
   }
   return (
     <div className='App'>
-      <header>
+      <header className='nav-bar'>
         <h1>info-games</h1>
         <nav>
           <Link to='/'>Home</Link>

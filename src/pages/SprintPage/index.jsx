@@ -23,15 +23,17 @@ const SprintPage = () => {
     }
   }
   return (
-    <>
-      <h2> Sprint </h2>
+    <div>
+      <div>
+        <h2> Sprint </h2>
+        <button onClick={() => setUsersSprint([])}>Borrar Sprint</button>
+      </div>
       <List
         users={usersSprint}
         handleUpdateScore={handleUpdateScore}
         createNewPerson={createNewPerson}
       />
-      <button onClick={() => setUsersSprint([])}>Borrar Sprint</button>
-    </>
+    </div>
   )
 }
 export default SprintPage

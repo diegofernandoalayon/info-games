@@ -19,14 +19,14 @@ const UsersPage = ({ users, handleUpdateScore, setUsers }) => {
   }
 
   return (
-    <>
+    <div>
       <h2>users</h2>
       <List
         users={users}
         handleUpdateScore={handleUpdateScore}
         createNewPerson={createNewPerson}
       />
-    </>
+    </div>
   )
 }
 
