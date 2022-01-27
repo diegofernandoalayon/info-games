@@ -18,7 +18,9 @@ const SprintPage = () => {
       score: [],
       id: (1 + Math.random()) * 200
     }
-    setUsersSprint(actual => [...actual, newPerson])
+    if (name) {
+      setUsersSprint(actual => [...actual, newPerson])
+    }
   }
   return (
     <>

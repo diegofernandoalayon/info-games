@@ -7,13 +7,15 @@ const UsersPage = ({ users, handleUpdateScore, setUsers }) => {
       name: name,
       score: []
     }
-    personServices
-      .createPerson(newPerson)
-      .then((data) => {
-        setUsers((actual) => {
-          return [...actual, data]
+    if (name) {
+      personServices
+        .createPerson(newPerson)
+        .then((data) => {
+          setUsers((actual) => {
+            return [...actual, data]
+          })
         })
-      })
+    }
   }
 
   return (
