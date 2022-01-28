@@ -1,0 +1,9 @@
+.title-page{
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.title-page h2 {
+  margin: 0;
+}
