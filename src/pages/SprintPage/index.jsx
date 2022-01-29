@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Button from '../../components/Button'
 import List from '../../components/List/index'
 import './sprintPage.css'
 
@@ -27,7 +28,7 @@ const SprintPage = () => {
     <div>
       <div className='title-page'>
         <h2> Sprint </h2>
-        <button onClick={() => setUsersSprint([])}>Borrar Sprint</button>
+        <Button onClick={() => setUsersSprint([])}>Borrar Sprint</Button>
       </div>
       <List
         users={usersSprint}
