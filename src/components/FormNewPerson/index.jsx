@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Button from '../Button'
 // import personServices from '../../services/persons'
 
 const FormNewPerson = ({ createNewPerson }) => {
@@ -13,7 +14,7 @@ const FormNewPerson = ({ createNewPerson }) => {
     <>
       <form onSubmit={handleSubmit}>
         <input placeholder='Name new User' type='text' value={name} onChange={(event) => setName(event.target.value)} />
-        <button>Create</button>
+        <Button>Create</Button>
       </form>
     </>
   )

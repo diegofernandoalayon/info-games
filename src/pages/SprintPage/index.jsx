@@ -28,7 +28,7 @@ const SprintPage = () => {
     <div>
       <div className='title-page'>
         <h2> Sprint </h2>
-        <Button onClick={() => setUsersSprint([])}>Borrar Sprint</Button>
+        <Button bgColor='tomato' onClick={() => setUsersSprint([])}>Borrar Sprint</Button>
       </div>
       <List
         users={usersSprint}
