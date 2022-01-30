@@ -32,12 +32,20 @@ function App () {
       <header className='nav-bar'>
         <h1>info-games</h1>
         <nav>
-          <Link to='/'>Home</Link>
-          <Link to='/users'>Users</Link>
-          <Link to='/sprint'>Sprint</Link>
+          <ul>
+            <li>
+              <Link to='/'>Home</Link>
+            </li>
+            <li>
+              <Link to='/users'>Users</Link>
+            </li>
+            <li>
+              <Link to='/sprint'>Sprint</Link>
+            </li>
+          </ul>
         </nav>
       </header>
-      <div className='App-header'>
+      <div>
         <Routes>
           <Route path='/' element={<h1>home</h1>} />
           <Route path='/users' element={<UsersPage users={users} handleUpdateScore={handleUpdateScore} setUsers={setUsers} />} />
