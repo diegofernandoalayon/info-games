@@ -18,6 +18,14 @@ const UsersPage = ({ users, handleUpdateScore, setUsers }) => {
     }
   }
 
+  const handleDeletePerson = (id) => {
+    personServices
+      .deletePerson(id)
+      .then((data) => {
+        setUsers((actual) => actual.filter((user) => user.id !== id))
+      })
+  }
+
   return (
     <div>
       <h2>users</h2>
@@ -25,6 +33,7 @@ const UsersPage = ({ users, handleUpdateScore, setUsers }) => {
         users={users}
         handleUpdateScore={handleUpdateScore}
         createNewPerson={createNewPerson}
+        handleDeletePerson={handleDeletePerson}
       />
     </div>
   )

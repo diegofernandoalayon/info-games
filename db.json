@@ -1,18 +1,9 @@
 {
   "persons": [
     {
-      "id": 1,
-      "name": "la fei",
-      "score": [
-        2.02
-      ]
-    },
-    {
-      "id": 2,
-      "name": "yo",
-      "score": [
-        2.46
-      ]
+      "name": "quesonas",
+      "score": [],
+      "id": 1
     }
   ]
 }
