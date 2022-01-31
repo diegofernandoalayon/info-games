@@ -24,6 +24,9 @@ const SprintPage = () => {
       setUsersSprint(actual => [...actual, newPerson])
     }
   }
+  const handleDeletePerson = (id) => {
+    setUsersSprint((actual) => actual.filter((user) => user.id !== id))
+  }
   return (
     <div>
       <div className='title-page'>
@@ -33,6 +36,7 @@ const SprintPage = () => {
       <List
         users={usersSprint}
         handleUpdateScore={handleUpdateScore}
+        handleDeletePerson={handleDeletePerson}
         createNewPerson={createNewPerson}
       />
     </div>
