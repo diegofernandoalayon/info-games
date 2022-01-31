@@ -16,17 +16,7 @@ function App () {
       .getPersons()
       .then(res => setUsers(res))
   }, [])
-  const handleUpdateScore = (id, score) => {
-    const person = users.find(p => p.id === id)
-    const personUpdate = {
-      ...person,
-      score: [...person.score, score]
-    }
-    personServices
-      .updateScore(id, personUpdate)
 
-    setUsers(actual => actual.map(person => person.id === id ? personUpdate : person))
-  }
   return (
     <div className='App'>
       <header className='nav-bar'>
@@ -48,7 +38,7 @@ function App () {
       <div>
         <Routes>
           <Route path='/' element={<h1>home</h1>} />
-          <Route path='/users' element={<UsersPage users={users} handleUpdateScore={handleUpdateScore} setUsers={setUsers} />} />
+          <Route path='/users' element={<UsersPage users={users} setUsers={setUsers} />} />
           <Route path='/sprint' element={<SprintPage />} />
           <Route path='/*' element={<h1>ruta no encontrada</h1>} />
         </Routes>

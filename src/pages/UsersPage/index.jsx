@@ -1,7 +1,7 @@
 import List from '../../components/List/index'
 import personServices from '../../services/persons'
 
-const UsersPage = ({ users, handleUpdateScore, setUsers }) => {
+const UsersPage = ({ users, setUsers }) => {
   const createNewPerson = (name) => {
     const newPerson = {
       name: name,
@@ -24,6 +24,17 @@ const UsersPage = ({ users, handleUpdateScore, setUsers }) => {
       .then((data) => {
         setUsers((actual) => actual.filter((user) => user.id !== id))
       })
+  }
+  const handleUpdateScore = (id, score) => {
+    const person = users.find(p => p.id === id)
+    const personUpdate = {
+      ...person,
+      score: [...person.score, score]
+    }
+    personServices
+      .updateScore(id, personUpdate)
+
+    setUsers(actual => actual.map(person => person.id === id ? personUpdate : person))
   }
 
   return (
