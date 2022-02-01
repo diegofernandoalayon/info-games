@@ -29,7 +29,7 @@ const UsersPage = ({ users, setUsers }) => {
     const person = users.find(p => p.id === id)
     const personUpdate = {
       ...person,
-      score: [...person.score, score]
+      score: [score, ...person.score]
     }
     personServices
       .updateScore(id, personUpdate)
