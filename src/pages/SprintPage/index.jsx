@@ -10,7 +10,7 @@ const SprintPage = () => {
     const person = usersSprint.find(p => p.id === id)
     const personUpdate = {
       ...person,
-      score: [...person.score, score]
+      score: [score, ...person.score]
     }
     setUsersSprint(actual => actual.map(person => person.id === id ? personUpdate : person))
   }
